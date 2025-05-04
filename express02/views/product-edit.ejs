@@ -1,0 +1,25 @@
+<%- include('partials/navbar') %>
+
+<div class="container" style="padding: 20px;">
+  <h1><%= title %></h1>
+  <form action="/products/<%= product.id %>?_method=PUT" method="POST">
+    <div>
+      <label for="title">Title:</label><br>
+      <input type="text" id="title" name="title" value="<%= product.title %>" required>
+    </div>
+    <div>
+      <label for="price">Price:</label><br>
+      <input type="number" id="price" name="price" value="<%= product.price %>" required>
+    </div>
+    <div>
+      <label for="description">Description:</label><br>
+      <textarea id="description" name="description" rows="4" required><%= product.description %></textarea>
+    </div>
+    <button type="submit" style="margin-top:10px; padding:6px 12px; background-color:#ffc107; color:#000; border:none; border-radius:4px;">
+      Update
+    </button>
+    <a href="/products" style="margin-left:10px; padding:6px 12px; background-color:#28a745; color:#fff; text-decoration:none; border-radius:4px;">
+      Kembali ke Daftar
+    </a>
+  </form>
+</div>
